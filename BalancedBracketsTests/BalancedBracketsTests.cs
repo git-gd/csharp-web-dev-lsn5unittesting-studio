@@ -50,5 +50,11 @@ namespace BalancedBracketsTests
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[LaunchCode"));
         }
+
+        [TestMethod]
+        public void ReversedBracketsInTextReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("Launch]Code["));
+        }
     }
 }
