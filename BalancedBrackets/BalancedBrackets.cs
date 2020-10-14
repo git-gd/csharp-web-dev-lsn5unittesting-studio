@@ -25,23 +25,24 @@ namespace BalancedBracketsNS
         */
         public static bool HasBalancedBrackets(String str)
         {
-            int openBrackets = 0, closedBrackets = 0;
+            int brackets = 0;
 
             foreach (char ch in str.ToCharArray())
             {
                 if (ch == '[')
                 {
-                    openBrackets++;
+                    brackets++;
                 }
                 else if (ch == ']')
                 {
-                    closedBrackets++;
-
-                    // if we ever have more closed brackets than open the string cannot be balanced
-                    if (closedBrackets > openBrackets) return false;
+                    brackets--;
                 }
+
+                // if brackets ever goes negative then we have unbalanced brackets
+                if (brackets < 0) return false;
+
             }
-            return openBrackets == closedBrackets;
+            return brackets == 0;
         }
     }
 }
