@@ -74,5 +74,11 @@ namespace BalancedBracketsTests
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]["));
         }
+
+        [TestMethod]
+        public void NestedBracketsReturnTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[test[0]][1][2]]"));
+        }
     }
 }
