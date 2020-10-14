@@ -16,15 +16,7 @@ namespace BalancedBracketsTests
         [TestMethod]
         public void EmptyStringReturnsFalse()
         {
-            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets(""));
-        }
-
-        [TestMethod]
-        public void NullStringReturnsFalse()
-        {
-            string nullStr = null;
-
-            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets(nullStr));
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets(""));
         }
 
         [TestMethod]

@@ -25,12 +25,6 @@ namespace BalancedBracketsNS
         */
         public static bool HasBalancedBrackets(String str)
         {
-            // Return false if the string is null.
-            if (str == null) return false;
-
-            // The smallest string that can have a balanced pair of brackets has a length of 2.
-            if (str.Length < 2) return false;
-
             int brackets = 0;
             foreach (char ch in str.ToCharArray())
             {
