@@ -42,5 +42,13 @@ namespace BalancedBracketsTests
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("Text[text]text"));
         }
+
+        // "[LaunchCode", "Launch]Code[", "[", "]["
+
+        [TestMethod]
+        public void NoClosingBracketReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[LaunchCode"));
+        }
     }
 }
