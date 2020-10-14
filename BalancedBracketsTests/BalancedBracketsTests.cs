@@ -26,5 +26,23 @@ namespace BalancedBracketsTests
 
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets(nullStr));
         }
+
+        [TestMethod]
+        public void BracketsContainingTextReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[Text]"));
+        }
+
+        [TestMethod]
+        public void BracketsBeforeTextReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]Text"));
+        }
+
+        [TestMethod]
+        public void BracketsAfterTextReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("Text[]"));
+        }
     }
 }
