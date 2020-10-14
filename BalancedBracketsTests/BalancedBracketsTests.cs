@@ -5,6 +5,10 @@ namespace BalancedBracketsTests
 {
     [TestClass]
     public class BalancedBracketsTests
+
+        /**
+         * Test for True on valid strings
+         */
     {
         // First test given by the studio instructions
         [TestMethod]
@@ -14,7 +18,7 @@ namespace BalancedBracketsTests
         }
 
         [TestMethod]
-        public void EmptyStringReturnsFalse()
+        public void EmptyStringReturnsTrue()
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets(""));
         }
@@ -43,7 +47,16 @@ namespace BalancedBracketsTests
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("Text[text]text"));
         }
 
-        // test for fail "[LaunchCode", "Launch]Code[", "[", "]["
+        [TestMethod]
+        public void NestedBracketsReturnTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[test[0]][1][2]]"));
+        }
+
+        /** 
+         * Test for False on  "[LaunchCode", "Launch]Code[", "[", "]["
+         */
+    
 
         [TestMethod]
         public void NoClosingBracketReturnsFalse()
@@ -73,12 +86,6 @@ namespace BalancedBracketsTests
         public void ReversedBracketsReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]["));
-        }
-
-        [TestMethod]
-        public void NestedBracketsReturnTrue()
-        {
-            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[test[0]][1][2]]"));
         }
     }
 }
