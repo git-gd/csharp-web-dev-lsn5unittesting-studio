@@ -58,10 +58,15 @@ namespace BalancedBracketsTests
         }
 
         [TestMethod]
-        public void SingOpenBracketReturnsFalse()
+        public void SingleOpenBracketReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("["));
         }
 
+        [TestMethod]
+        public void SingleClosingBracketReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]"));
+        }
     }
 }
