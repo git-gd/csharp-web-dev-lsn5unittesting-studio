@@ -6,12 +6,11 @@ namespace BalancedBracketsTests
     [TestClass]
     public class BalancedBracketsTests
     {
-        // TODO: Add tests to this file.
-
+        // First test given by the studio instructions
         [TestMethod]
-        public void EmptyTest()
+        public void OnlyBracketsReturnsTrue()
         {
-            Assert.AreEqual(true, true);
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]"));
         }
     }
 }
