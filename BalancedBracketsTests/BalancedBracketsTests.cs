@@ -18,5 +18,13 @@ namespace BalancedBracketsTests
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets(""));
         }
+
+        [TestMethod]
+        public void NullStringReturnsFalse()
+        {
+            string nullStr = null;
+
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets(nullStr));
+        }
     }
 }
